@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Folio · PDF → EPUB 转换工坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- 漂移色晕背景 -->
+<div class="aura" aria-hidden="true">
+  <div class="blob blob-bronze"></div>
+  <div class="blob blob-sage"></div>
+  <div class="blob blob-azure"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<main class="stage">
+
+  <header class="masthead anim-rise" style="--d:.05s">
+    <p class="overline">THE&nbsp;CONVERSION&nbsp;ATELIER</p>
+    <h1 class="wordmark">Folio</h1>
+    <p class="tagline">PDF &nbsp;&rarr;&nbsp;EPUB &middot; 沉静而准确的转换</p>
+    <div class="hairline"><span></span></div>
+  </header>
+
+  <!-- 毛玻璃主卡 -->
+  <section class="glass-panel anim-rise" style="--d:.2s">
+
+    <!-- 上传区:博物馆展签 -->
+    <div id="dropzone" class="placard" tabindex="0" role="button"
+         aria-label="选择或拖入 PDF 文件">
+      <div class="placard-frame">
+        <svg class="placard-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="10" y="6" width="28" height="36" rx="2" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M24 34v6m0 0l-3-3m3 3l3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="placard-title">将 PDF 托付于此</p>
+        <p class="placard-sub">拖入文件,或 <span class="linklike">浏览馆藏</span>(点击选择)</p>
+        <p class="placard-hint">仅支持 PDF &middot; 全部在本地完成 &middot; 不上传任何数据</p>
+      </div>
+      <input type="file" id="fileInput" accept=".pdf,application/pdf" hidden/>
+    </div>
+
+    <!-- 进度 -->
+    <div id="progressCard" class="progress-card" hidden>
+      <p id="fileLabel" class="file-label"></p>
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+        <div class="progress-shimmer"></div>
+      </div>
+      <p id="phaseLabel" class="phase-label">正在打开 PDF&hellip;</p>
+    </div>
+
+    <!-- 结果 -->
+    <div id="resultCard" class="result-card" hidden>
+      <div class="result-seal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M16 24.5l5.5 5.5L32 18.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="result-title">装订完成</p>
+      <p id="resultMeta" class="result-meta"></p>
+      <a id="downloadBtn" class="btn-download" href="#" download>
+        <span>获取 EPUB</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button id="againBtn" class="btn-ghost" type="button">再转换一本</button>
+    </div>
+
+    <!-- 错误 -->
+    <div id="errorCard" class="error-card" hidden>
+      <p class="error-title">转换未能完成</p>
+      <p id="errorMsg" class="error-msg"></p>
+      <button id="retryBtn" class="btn-ghost" type="button">重新开始</button>
+    </div>
+
+  </section>
+
+  <footer class="colophon anim-rise" style="--d:.35s">
+    <div class="hairline"><span></span></div>
+    <p>代码块 &middot; 插图 &middot; 章节目录,皆如实保留<br/>
+    <span class="dim">Code blocks, figures &amp; contents &mdash; faithfully preserved</span></p>
+  </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

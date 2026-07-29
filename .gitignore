@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+# 转换产物(版权内容/大文件不入库)
+*.epub
+# 调试/临时文件
+epub_preview/
+debug_*.py
+analyze_*.py
+test_*.epub
