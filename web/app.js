@@ -2,6 +2,14 @@
 (() => {
   "use strict";
 
+  /* ---------- 自适应语言 ---------- */
+  const isZh = (navigator.language || "en").toLowerCase().startsWith("zh");
+  const tagline = document.getElementById("tagline");
+  if (tagline) {
+    tagline.innerHTML = isZh ? tagline.dataset.zh : tagline.dataset.en;
+    document.documentElement.lang = isZh ? "zh-CN" : "en";
+  }
+
   const dropzone    = document.getElementById("dropzone");
   const fileInput   = document.getElementById("fileInput");
   const progressCard = document.getElementById("progressCard");
