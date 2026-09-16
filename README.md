@@ -1,7 +1,6 @@
 # Folio · pdf2epub — Manning 风格技术书籍 PDF → EPUB 转换器
 
-专为《Build a Large Language Model (From Scratch)》MEAP 版打造的转换工具,
-也可用于其他 Manning 排版风格(Verdana 正文 / Consolas 代码 / 灰底代码框)的 PDF 书籍。
+可用于Manning 排版风格(Verdana 正文 / Consolas 代码 / 灰底代码框)的 PDF 书籍。
 本地运行,不上传任何文件。
 
 ## 功能
